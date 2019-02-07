@@ -58,7 +58,6 @@
                     </group>
                     <group string="Description">
                         <field name="description"
-                               required="True"
                                nolabel="1"/>
                     </group>
                     <group name="parties" string="Parties">

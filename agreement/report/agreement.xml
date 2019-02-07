@@ -23,6 +23,28 @@
                 <t t-foreach="docs" t-as="doc">
                     <t t-call="web.external_layout">
                         <div class="page">
+<style>
+ol {
+list-style: none;
+counter-reset: count-all;
+}
+ol > li {
+list-style-type: none;
+margin-bottom: 0px;
+padding-left: 40px;
+position: relative;
+}
+ol > li:before {
+counter-increment: count-all 1;
+content: counters(count-all,".") ". ";
+    position: absolute;
+    left: 0;
+    top: 0px;
+    padding: 0px 0;
+    font-weight: bold;
+    text-align: left;
+}
+</style>
                             <h1 t-field="doc.name"/>
                             <div name="description">
                                 <p t-field="doc.description"/>
@@ -49,11 +71,11 @@
                                 <tbody class="section_tbody">
                                     <tr>
                                         <td>
-                                            <ol>
+                                            <ol class="transparent-numbering">
                                                 <li t-foreach="doc.sections_ids" t-as="s">
                                                     <h3 t-field="s.name"/>
                                                     <p t-field="s.content"/>
-                                                    <ol>
+                                                    <ol class="transparent-numbering">
                                                         <li t-foreach="s.clauses_ids" t-as="c">
                                                             <h4 t-field="c.name"/>
                                                             <p t-field="c.content"/>

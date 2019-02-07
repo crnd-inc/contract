@@ -12,7 +12,7 @@ class AgreementClause(models.Model):
     # General
     name = fields.Char(
         string="Title",
-        required=True
+#        required=True
     )
     clause_sequence = fields.Integer(
         string="Sequence"
